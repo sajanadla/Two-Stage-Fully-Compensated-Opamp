@@ -99,7 +99,7 @@ The two-stage Miller op-amp consists of the following primary stages:
   Ensure that the phase margin at unity gain bandwidth is ≥ 60° with a 10pF load capacitance.
 
 ---
-
+![Alt text for your image](./results.png)
 ## Future Work
 
 - **Layout Design**:  
