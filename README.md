@@ -46,9 +46,8 @@ The two-stage Miller op-amp consists of the following primary stages:
 
 - **opamp.spice**:  
   Contains the SPICE netlist for the two-stage Miller opamp. This file defines the transistor configuration, power supplies, load capacitance, and compensation circuit.
-
-- **TSMC_0.35um_CMOS_models.inc**:  
-  A model file for the TSMC 0.35μm CMOS technology, defining the NMOS and PMOS transistors used in the design.
+-**schematic.jpg**
+-**results.jpg**
 
 - **README.md**:  
   This README file, providing an overview of the project and design specifications.
@@ -106,18 +105,5 @@ The two-stage Miller op-amp consists of the following primary stages:
 - **Layout Design**:  
   Following successful simulation, a layout can be created using a suitable CMOS layout tool (e.g., Cadence Virtuoso). Post-layout simulations can further refine the design to account for parasitics.
 
-- **Power Optimization**:  
-  Further optimizations can be made to reduce power consumption while meeting performance targets, which may involve adjusting transistor sizing and biasing.
 
----
-
-## License
-
-This project is open-source and free to use for educational and research purposes.
-
----
-
-### Contact
-
-For any questions or contributions, please feel free to reach out.
 
