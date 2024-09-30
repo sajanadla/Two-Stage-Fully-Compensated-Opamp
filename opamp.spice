@@ -1,0 +1,45 @@
+* Two-Stage Miller Opamp using TSMC 0.35um CMOS technology with NMOS4 and PMOS4
+* Load Capacitor CL = 10pF
+* Power Supply = 3.3V
+* Design specifications as provided
+
+.include 'TSMC_0.35um_CMOS_models.inc' 
+
+* Power Supplies
+VDD Vdd 0 DC 3.3
+VSS Vss 0 DC 0
+
+* Differential Input Voltage Source
+VIN+ Vin+ 0 DC 1.65      * Common mode at half of 3.3V
+VIN- Vin- 0 AC 1mV
+
+* Transistors - Differential Pair (M1, M2) - NMOS4
+M1 OUT1 Vin+ Vss Vss N_0p35 L=0.35u W=20u
+M2 OUT1 Vin- Vss Vss N_0p35 L=0.35u W=20u
+
+* Current Mirror (M3, M4) - PMOS4
+M3 OUT1 Vdd Vdd Vdd P_0p35 L=0.35u W=40u
+M4 Vdd OUT1 Vdd Vdd P_0p35 L=0.35u W=40u
+
+* Gain Stage - Cascode (M5, M6) - PMOS4/NMOS4
+M5 OUT2 OUT1 Vdd Vdd P_0p35 L=0.35u W=60u
+M6 OUT2 Vss OUT1 Vss N_0p35 L=0.35u W=60u
+
+* Compensation Capacitor for Miller Effect
+CC OUT2 OUT1 5pF
+
+* Output Stage (M7, M8) - PMOS4/NMOS4
+M7 OUT2 Vout Vdd Vdd P_0p35 L=0.35u W=60u
+M8 Vout OUT2 Vss Vss N_0p35 L=0.35u W=60u
+
+* Load Capacitor
+CL Vout 0 10pF
+
+* Biasing Circuit (Current Source) - NMOS4
+Ibias Vbias 0 DC 10uA
+Mbias Vbias 0 Vss Vss N_0p35 L=0.35u W=10u
+
+* Simulation Commands
+.TRAN 0.1u 10u
+.AC DEC 10 10Hz 100MHz
+.END
