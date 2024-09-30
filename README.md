@@ -46,8 +46,8 @@ The two-stage Miller op-amp consists of the following primary stages:
 
 - **opamp.spice**:  
   Contains the SPICE netlist for the two-stage Miller opamp. This file defines the transistor configuration, power supplies, load capacitance, and compensation circuit.
--**schematic.jpg**:
--**results.jpg**:
+- **schematic.jpg**:
+- **results.jpg**:
 
 - **README.md**:  
   This README file, providing an overview of the project and design specifications.
