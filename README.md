@@ -83,7 +83,7 @@ The two-stage Miller op-amp consists of the following primary stages:
   The bias current should be chosen to meet both the power dissipation constraint (Pdiss ≤ 1mW) and to ensure proper operation of the differential input pair.
 
 ---
-
+![Alt text for your image](./circuits.JPG)
 ## Performance Verification
 
 - **Gain and Bandwidth**:  
